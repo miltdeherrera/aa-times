@@ -1,0 +1,178 @@
+/* Your code here */
+
+.main {
+    display: grid;
+    grid-template-columns: 66fr 1px 33fr;
+    font-size: 14px;
+    margin-top: 10px;
+    padding-bottom: 30px;
+}
+
+.left {
+   
+}
+
+.left-top {
+    /* main section with headline and one article divided into
+    two halves. video takes up 480 pixels. */
+    padding-bottom: 60px;
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    grid-template-rows: 1fr 1fr;
+    grid-template:
+        "headline headline"
+        "article video";
+    column-gap: 20px;
+    padding-right: 10px;
+}
+
+.left-bottom {
+    /* two articles, left takes up 40% of the space. */
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.left-article-1 {
+    border-right: 1px solid #999;
+    padding: 6px 6px 60px 6px;
+
+}
+
+.left-article-2 {
+    padding: 6px 6px 30px 6px;
+
+}
+
+.right {
+    margin-left: 12px;
+
+}
+
+.right-top {
+    /* Opinions section */
+    padding-bottom: 8px;
+}
+
+.right-middle {
+    /* operations article with big picture in the middle. */
+    border-top: 1px solid #999;
+    padding: 8px 0px;
+}
+
+.right-bottom {
+    /* flex column list of articles. They start at top-left,
+    scroll down and then to the right. */
+    border-top: 1px solid #999;
+    padding-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 180px;
+    justify-content: space-between;
+}
+
+.vertical-border {
+    width: 0px;
+    border-right: 1px solid #e2e2e2;
+}
+
+.article__big-headline {
+    font-size: 32px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 32px;
+    margin: 10px 0px;
+    grid-area: headline;
+}
+.article__less-big-headline {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 22px;
+    margin-bottom: 30px;
+}
+.article__byline {
+    color: #999;
+    font-family:'Times New Roman', Times, serif;
+    margin-bottom: 12px;
+}
+
+.left-top > .article__byline,
+.right-top > .article__byline,
+.right-bottom .article__byline,
+.left-bottom .article__byline {
+    margin-bottom: 8px;
+}
+
+
+.article__ul {
+    list-style: disc inside;
+}
+
+.article__li {}
+
+.article__comments {
+    color: #326891;
+    margin-top: 12px;
+}
+.article__headline {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 22px;
+    margin: 15px 0px;
+}
+.article__p {
+    margin: 8px 0px;
+}
+
+.article__section-title-big {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.article__small-headline {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 16px;
+}
+
+.article__small-box {
+    max-width: 48%;
+}
+
+
+/* changing display for smaller screens */
+@media only screen and (min-width: 1001px) and (max-width: 1200px) {
+    .right, 
+    .vertical-border, 
+    .main-nav {
+        display: none;
+    }
+
+    .main {
+        display: block;
+        font-size: 14px;
+        margin-top: 10px;
+        padding-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .right, 
+    .vertical-border, 
+    .main-nav,
+    .interests-bar {
+        display: none;
+    }
+
+    .main {
+        display: block;
+        font-size: 14px;
+        margin-top: 10px;
+        padding-bottom: 30px;
+    }
+}
